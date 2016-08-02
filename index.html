@@ -1,0 +1,30 @@
+---
+layout: home
+---
+
+<header class="home-header grey">
+  <div class="home-header-content wrapper">
+    {% for header in site.index %}
+      <div class="profile-image"><img src="{{ header.profileimage }}" /img></div>
+      <div class="profile-text">
+        <h1>{{ header.name }}</h1>
+        <h2>{{ header.title }}</h2>
+      </div>
+    {% endfor %}
+  </div>
+</header>
+
+<div class="page-content">
+  <div class="wrapper">
+    <div class="home">
+      <div class="post">
+        {% for index in site.index %}
+          <article class="post-content">
+            {{ index.content | markdownify }}
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
